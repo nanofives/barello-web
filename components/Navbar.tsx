@@ -35,11 +35,11 @@ export default function Navbar() {
               className="w-auto h-16 md:h-20"
               style={{ paddingTop: '4px', paddingBottom: '4px' }}
             />
-            <div className="flex flex-col justify-center" style={{ textAlign: 'justify', textAlignLast: 'justify' }}>
-              <span className="text-navy font-bold text-sm md:text-2xl leading-tight block">
+            <div className="flex flex-col justify-center whitespace-nowrap">
+              <span className="text-navy font-bold text-xs md:text-2xl leading-tight block">
                 Pablo Barello & Asoc.
               </span>
-              <span className="text-navy font-normal text-xs md:text-lg leading-tight block" style={{ letterSpacing: '0.15em' }}>
+              <span className="text-navy font-normal text-[10px] md:text-lg leading-tight block" style={{ letterSpacing: '0.1em' }}>
                 Servicio Topográficos
               </span>
             </div>
