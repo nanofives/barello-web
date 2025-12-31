@@ -7,12 +7,6 @@ import Image from 'next/image';
 
 const clients = [
   {
-    name: 'Axion',
-    url: 'https://www.pan-energy.com',
-    logo: '/bd67c5_30c2ec9911164547811d2aa54074d8b6~mv2.png',
-    logoHover: '/bd67c5_0e4decaa26384878ab34d9022f2df6f1~mv2.png',
-  },
-  {
     name: 'Pan American Energy',
     url: 'https://www.pan-energy.com',
     logo: '/bd67c5_30c2ec9911164547811d2aa54074d8b6~mv2.png',
@@ -69,12 +63,12 @@ function ClientCard({
       onHoverEnd={() => setIsHovered(false)}
       className="group"
     >
-      <div className="h-24 flex items-center justify-center relative">
+      <div className="h-20 flex items-center justify-center relative">
         <Image
           src={isHovered ? client.logoHover : client.logo}
           alt={client.name}
-          width={150}
-          height={100}
+          width={120}
+          height={80}
           className="object-contain"
         />
       </div>
@@ -111,7 +105,7 @@ export default function Clients() {
           />
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 max-w-6xl mx-auto">
+        <div className="flex flex-wrap items-center justify-center gap-8 max-w-5xl mx-auto">
           {clients.map((client, index) => (
             <ClientCard key={client.name + index} client={client} index={index} />
           ))}
