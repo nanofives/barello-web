@@ -20,7 +20,7 @@ export default function Navbar() {
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.6 }}
         className="bg-yellow flex items-center"
-        style={{ paddingLeft: '25px', paddingRight: '25px' }}
+        style={{ paddingLeft: '25px', paddingRight: '25px', paddingTop: '8px', paddingBottom: '8px' }}
       >
         <a href="#inicio" className="flex items-center gap-2">
           <Image
