@@ -47,7 +47,7 @@ export default function Navbar() {
         </motion.div>
 
         {/* Navigation Menu - Navy Background */}
-        <div className="bg-navy flex-1 flex items-end justify-end px-4 md:px-8 pb-1">
+        <div className="bg-navy flex-1 flex items-end justify-end px-2 md:px-8 pb-1">
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8" style={{ paddingBottom: '15px' }}>
             {navItems.map((item, index) => (

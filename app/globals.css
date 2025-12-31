@@ -53,6 +53,11 @@ h1, h2, h3, h4, h5, h6 {
 
 html {
   scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+section {
+  scroll-margin-top: 80px;
 }
 
 /* Hide Next.js DevTools indicator */
