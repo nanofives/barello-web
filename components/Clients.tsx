@@ -115,7 +115,7 @@ export default function Clients() {
           />
         </motion.div>
 
-        <div className="flex flex-wrap items-center justify-center gap-16 w-full px-8">
+        <div className="flex flex-wrap items-center justify-center gap-16 w-full px-4">
           {clients.map((client, index) => (
             <ClientCard key={client.name + index} client={client} index={index} />
           ))}
