@@ -102,7 +102,7 @@ export default function Clients() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl font-bold mb-4 tracking-wide">
+          <h2 className="text-5xl font-bold mb-4 tracking-wide" style={{ color: "#ADADAD" }}>
             CLIENTES
           </h2>
           <motion.div

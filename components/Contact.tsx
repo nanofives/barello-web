@@ -38,7 +38,7 @@ export default function Contact() {
           transition={{ duration: 0.6 }}
           className="text-center mb-8"
         >
-          <h2 className="text-5xl font-bold mb-4 tracking-wide">
+          <h2 className="text-5xl font-bold mb-4 tracking-wide" style={{ color: "#ADADAD" }}>
             CONTACTO
           </h2>
           <motion.div
