@@ -7,7 +7,13 @@ import Image from 'next/image';
 
 const clients = [
   {
-    name: 'Pan Energy',
+    name: 'Axion',
+    url: 'https://www.pan-energy.com',
+    logo: '/bd67c5_30c2ec9911164547811d2aa54074d8b6~mv2.png',
+    logoHover: '/bd67c5_0e4decaa26384878ab34d9022f2df6f1~mv2.png',
+  },
+  {
+    name: 'Pan American Energy',
     url: 'https://www.pan-energy.com',
     logo: '/bd67c5_30c2ec9911164547811d2aa54074d8b6~mv2.png',
     logoHover: '/bd67c5_0e4decaa26384878ab34d9022f2df6f1~mv2.png',
@@ -58,17 +64,18 @@ function ClientCard({
       initial={{ opacity: 0, scale: 0.8 }}
       animate={isInView ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      whileHover={{ scale: 1.05, y: -5 }}
+      whileHover={{ scale: 1.1 }}
       onHoverStart={() => setIsHovered(true)}
       onHoverEnd={() => setIsHovered(false)}
       className="group"
     >
-      <div className="bg-white p-6 rounded shadow-md h-32 flex items-center justify-center relative">
+      <div className="h-24 flex items-center justify-center relative">
         <Image
           src={isHovered ? client.logoHover : client.logo}
           alt={client.name}
-          fill
-          className="object-contain p-4"
+          width={150}
+          height={100}
+          className="object-contain"
         />
       </div>
     </motion.a>
@@ -104,9 +111,9 @@ export default function Clients() {
           />
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 max-w-5xl mx-auto">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 max-w-6xl mx-auto">
           {clients.map((client, index) => (
-            <ClientCard key={client.name} client={client} index={index} />
+            <ClientCard key={client.name + index} client={client} index={index} />
           ))}
         </div>
       </div>
