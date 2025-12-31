@@ -19,21 +19,21 @@ export default function Navbar() {
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="bg-yellow flex items-center px-8 py-4"
+        className="bg-yellow flex items-center px-8 py-6"
       >
         <a href="#inicio" className="flex items-center gap-3">
           <Image
             src="/logo.svg"
             alt="PB&Asociados Logo"
-            width={60}
-            height={60}
-            className="w-auto h-14"
+            width={70}
+            height={70}
+            className="w-auto h-16"
           />
-          <div className="flex flex-col">
-            <span className="text-navy font-bold text-sm leading-tight">
+          <div className="flex flex-col justify-center">
+            <span className="text-navy font-bold text-base leading-tight text-justify">
               Pablo Barello & Asoc.
             </span>
-            <span className="text-navy font-semibold text-xs leading-tight">
+            <span className="text-navy font-normal text-sm leading-tight text-justify">
               Servicio Topográficos
             </span>
           </div>
@@ -41,7 +41,7 @@ export default function Navbar() {
       </motion.div>
 
       {/* Navigation Menu - Navy Background */}
-      <div className="bg-navy flex-1 flex items-center justify-end px-8">
+      <div className="bg-navy flex-1 flex items-center justify-end px-8 h-[88px]">
         <div className="hidden md:flex space-x-8">
           {navItems.map((item, index) => (
             <motion.a
