@@ -56,8 +56,8 @@ export default function About() {
           >
             <div className="relative w-full h-[500px] rounded shadow-lg overflow-hidden">
               <Image
-                src="/c19c76_427a7bbf62474f74968cb087499c7a3e.jpg"
-                alt="Equipo topográfico"
+                src="/c19c76_5f05f0fa3cc84e448cc6531038e5344d.jpg"
+                alt="Profesional de topografía Pablo Barello"
                 fill
                 className="object-cover"
               />
