@@ -116,7 +116,13 @@ export default function Navbar() {
                   exit={{ opacity: 0, x: -20 }}
                   transition={{ delay: index * 0.05 }}
                   onClick={(e) => {
+                    e.preventDefault();
                     setMobileMenuOpen(false);
+                    const target = document.querySelector(item.href);
+                    if (target) {
+                      const offsetTop = (target as HTMLElement).offsetTop - 80;
+                      window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+                    }
                   }}
                   className="text-white font-medium text-base px-8 py-4 hover:bg-yellow hover:text-navy transition-colors duration-200 border-b border-white/10"
                 >
