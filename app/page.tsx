@@ -5,7 +5,6 @@ import About from '@/components/About';
 import Clients from '@/components/Clients';
 import Contact from '@/components/Contact';
 import Footer from '@/components/Footer';
-import ChatButton from '@/components/ChatButton';
 
 export default function Home() {
   return (
@@ -17,7 +16,6 @@ export default function Home() {
       <Clients />
       <Contact />
       <Footer />
-      <ChatButton />
     </main>
   );
 }
