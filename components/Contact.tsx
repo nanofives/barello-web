@@ -14,28 +14,18 @@ export default function Contact() {
     message: '',
   });
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Enviar email mediante Web3Forms
-    const form = e.target as HTMLFormElement;
-    const formDataToSend = new FormData(form);
+    const subject = encodeURIComponent('Solicitud de Presupuesto - Pablo Barello & Asoc.');
+    const body = encodeURIComponent(
+      `Nombre: ${formData.name}\n` +
+      `Email: ${formData.email}\n` +
+      `Teléfono: ${formData.phone}\n\n` +
+      `Mensaje:\n${formData.message}`
+    );
 
-    try {
-      const response = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        body: formDataToSend,
-      });
-
-      if (response.ok) {
-        alert('Mensaje enviado exitosamente!');
-        setFormData({ name: '', email: '', phone: '', message: '' });
-      } else {
-        alert('Error al enviar el mensaje. Por favor intenta de nuevo.');
-      }
-    } catch (error) {
-      alert('Error al enviar el mensaje. Por favor intenta de nuevo.');
-    }
+    window.location.href = `mailto:info@pablobarello.com.ar?subject=${subject}&body=${body}`;
   };
 
   const handleChange = (
@@ -159,12 +149,6 @@ export default function Contact() {
               Recibe un presupuesto
             </h3>
             <form onSubmit={handleSubmit} className="space-y-4">
-              {/* Web3Forms Access Key - Necesitas registrarte gratis en web3forms.com */}
-              <input type="hidden" name="access_key" value="TU_ACCESS_KEY_AQUI" />
-              <input type="hidden" name="redirect" value="https://nanofives.github.io/barello-web#contacto" />
-              <input type="hidden" name="subject" value="Nuevo presupuesto desde pablobarello.com.ar" />
-              <input type="hidden" name="from_name" value="Formulario Web Pablo Barello" />
-
               <div>
                 <input
                   type="text"
