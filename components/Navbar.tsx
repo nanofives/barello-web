@@ -6,8 +6,8 @@ import Image from 'next/image';
 export default function Navbar() {
   const navItems = [
     { name: 'INICIO', href: '#inicio' },
-    { name: 'SERVICIOS', href: '#servicios' },
     { name: 'NOSOTROS', href: '#nosotros' },
+    { name: 'SERVICIOS', href: '#servicios' },
     { name: 'PROYECTOS', href: '#proyectos' },
     { name: 'CONTACTO', href: '#contacto' },
   ];
@@ -19,7 +19,7 @@ export default function Navbar() {
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="bg-yellow flex items-center px-8 py-6"
+        className="bg-yellow flex items-center px-8 py-4"
       >
         <a href="#inicio" className="flex items-center gap-3">
           <Image
@@ -41,7 +41,7 @@ export default function Navbar() {
       </motion.div>
 
       {/* Navigation Menu - Navy Background */}
-      <div className="bg-navy flex-1 flex items-center justify-end px-8 h-[88px]">
+      <div className="bg-navy flex-1 flex items-end justify-end px-8 pb-2">
         <div className="hidden md:flex space-x-8">
           {navItems.map((item, index) => (
             <motion.a

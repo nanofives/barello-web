@@ -71,7 +71,7 @@ export default function Services() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl font-bold text-navy mb-4 tracking-wide">
+          <h2 className="text-5xl font-bold text-gray-light mb-4 tracking-wide">
             SERVICIOS
           </h2>
           <motion.div
