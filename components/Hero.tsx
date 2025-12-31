@@ -37,11 +37,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.5 }}
               className="text-3xl md:text-5xl font-bold text-white leading-tight drop-shadow-2xl"
             >
-              LLEVAMOS LA
-              <br />
-              TOPOGRAFÍA A
-              <br />
-              OTRO NIVEL
+              LLEVAMOS LA TOPOGRAFÍA A OTRO NIVEL
             </motion.h1>
           </motion.div>
         </div>
