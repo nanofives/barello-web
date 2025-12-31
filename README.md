@@ -1,36 +1,104 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Servicios Topográficos - Sitio Web
 
-## Getting Started
+Sitio web moderno para empresa de topografía, geodesia y agrimensura legal con 20 años de experiencia.
 
-First, run the development server:
+## 🚀 Tecnologías
+
+- **Next.js 15** - Framework React de última generación
+- **TypeScript** - Tipado estático para mayor seguridad
+- **Tailwind CSS v4** - Estilos modernos y responsivos
+- **Framer Motion** - Animaciones fluidas y profesionales
+
+## 🎨 Características
+
+- ✨ Diseño moderno y profesional
+- 📱 Totalmente responsivo (móvil, tablet, desktop)
+- 🎭 Animaciones suaves con Framer Motion
+- 🎨 Paleta de colores personalizada del sitio original
+- ⚡ Rendimiento optimizado con Next.js
+- 🔍 SEO optimizado
+
+## 📦 Instalación y Ejecución
 
 ```bash
+# Instalar dependencias
+npm install
+
+# Ejecutar en modo desarrollo
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Compilar para producción
+npm run build
+
+# Ejecutar en producción
+npm start
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abre [http://localhost:3000](http://localhost:3000) en tu navegador para ver el sitio.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 📂 Estructura del Proyecto
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+```
+barello-web/
+├── app/
+│   ├── globals.css          # Estilos globales y paleta de colores
+│   ├── layout.tsx            # Layout principal
+│   └── page.tsx              # Página principal
+├── components/
+│   ├── Navbar.tsx            # Barra de navegación
+│   ├── Hero.tsx              # Sección hero
+│   ├── Services.tsx          # Sección de servicios
+│   ├── About.tsx             # Sección nosotros
+│   ├── Clients.tsx           # Sección clientes
+│   ├── Contact.tsx           # Formulario de contacto
+│   └── Footer.tsx            # Pie de página
+└── public/                   # Archivos estáticos
+```
 
-## Learn More
+## 🎨 Paleta de Colores
 
-To learn more about Next.js, take a look at the following resources:
+- **Primary**: #166aea (Azul principal)
+- **Primary Light**: #116dff
+- **Secondary**: #3899ec
+- **Accent**: #7fccf7
+- **Dark**: #20303c
+- **Gray**: #5f6360
+- **Success**: #68B04D
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📝 Secciones
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Hero** - Banner principal con llamada a la acción
+2. **Servicios** - Relevamientos, Replanteos, Geodesia, Agrimensura Legal
+3. **Nosotros** - Información de la empresa y estadísticas
+4. **Clientes** - Logos de empresas clientes
+5. **Contacto** - Formulario de contacto e información
 
-## Deploy on Vercel
+## 🚀 Deploy
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+### Vercel (Recomendado)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+El proyecto está optimizado para desplegarse en Vercel:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/nanofives/barello-web)
+
+1. Conecta tu repositorio de GitHub
+2. Vercel detectará automáticamente Next.js
+3. El sitio se desplegará automáticamente
+
+### Otros proveedores
+
+- **Netlify**: Compatible
+- **AWS Amplify**: Compatible
+- **Cloudflare Pages**: Compatible
+
+## 📧 Contacto
+
+Para modificaciones o consultas sobre el sitio web, contactar a través del formulario de contacto.
+
+## 📄 Licencia
+
+© 2025 Servicios Topográficos. Todos los derechos reservados.
+
+---
+
+🤖 Generado con [Claude Code](https://claude.com/claude-code)
