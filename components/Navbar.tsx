@@ -29,11 +29,11 @@ export default function Navbar() {
             height={70}
             className="w-auto h-16"
           />
-          <div className="flex flex-col justify-center">
-            <span className="text-navy font-bold text-base leading-tight text-justify">
+          <div className="flex flex-col justify-center" style={{ textAlign: 'justify', textAlignLast: 'justify' }}>
+            <span className="text-navy font-bold text-base leading-tight block">
               Pablo Barello & Asoc.
             </span>
-            <span className="text-navy font-normal text-sm leading-tight text-justify">
+            <span className="text-navy font-normal text-sm leading-tight block">
               Servicio Topográficos
             </span>
           </div>
