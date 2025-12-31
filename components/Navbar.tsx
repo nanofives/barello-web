@@ -19,21 +19,21 @@ export default function Navbar() {
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="bg-yellow flex items-center px-8 py-4"
+        className="bg-yellow flex items-center px-4 py-4"
       >
-        <a href="#inicio" className="flex items-center gap-3">
+        <a href="#inicio" className="flex items-center gap-4">
           <Image
             src="/logo.svg"
             alt="PB&Asociados Logo"
-            width={70}
-            height={70}
-            className="w-auto h-16"
+            width={85}
+            height={85}
+            className="w-auto h-20"
           />
           <div className="flex flex-col justify-center" style={{ textAlign: 'justify', textAlignLast: 'justify' }}>
-            <span className="text-navy font-bold text-base leading-tight block">
+            <span className="text-navy font-bold text-lg leading-tight block">
               Pablo Barello & Asoc.
             </span>
-            <span className="text-navy font-normal text-sm leading-tight block" style={{ letterSpacing: '0.1em' }}>
+            <span className="text-navy font-normal text-base leading-tight block" style={{ letterSpacing: '0.1em' }}>
               Servicio Topográficos
             </span>
           </div>
