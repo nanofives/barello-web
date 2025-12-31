@@ -13,7 +13,7 @@ export default function Navbar() {
   ];
 
   return (
-    <nav className="fixed top-0 left-0 right-0 z-50 flex shadow-lg">
+    <nav className="fixed top-0 left-0 right-0 z-50 flex">
       {/* Logo Section - Yellow Background */}
       <motion.div
         initial={{ x: -100, opacity: 0 }}
