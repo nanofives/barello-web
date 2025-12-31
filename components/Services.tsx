@@ -79,7 +79,7 @@ export default function Services() {
             animate={isInView ? { width: '100px' } : { width: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             style={{ backgroundColor: '#FFE045' }}
-            className="h-1 mx-auto mb-6"
+            className="h-2 mx-auto mb-6"
           />
         </motion.div>
 

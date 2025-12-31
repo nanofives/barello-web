@@ -28,7 +28,7 @@ export default function About() {
               animate={isInView ? { width: '100px' } : { width: 0 }}
               transition={{ duration: 0.8, delay: 0.4 }}
               style={{ backgroundColor: '#FFE045' }}
-              className="h-1 mb-8"
+              className="h-2 mb-8"
             />
 
             <p className="text-base text-navy/80 leading-relaxed mb-6 text-justify">

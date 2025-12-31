@@ -101,7 +101,7 @@ export default function Clients() {
             animate={isInView ? { width: '100px' } : { width: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
             style={{ backgroundColor: '#FFE045' }}
-            className="h-1 mx-auto"
+            className="h-2 mx-auto"
           />
         </motion.div>
 
