@@ -9,15 +9,13 @@ export default function Hero() {
       id="inicio"
       className="relative min-h-screen flex items-start justify-end overflow-hidden"
     >
-      {/* Background Image */}
-      <div className="absolute inset-0">
-        <Image
-          src="/c19c76_427a7bbf62474f74968cb087499c7a3e.jpg"
-          alt="Equipo topográfico"
-          fill
-          className="object-cover"
-          priority
-        />
+      {/* Background Image - Fixed */}
+      <div
+        className="absolute inset-0 bg-cover bg-center bg-fixed"
+        style={{
+          backgroundImage: 'url(/c19c76_427a7bbf62474f74968cb087499c7a3e.jpg)',
+        }}
+      >
         {/* Overlay for better text readability */}
         <div className="absolute inset-0 bg-navy/20" />
       </div>
