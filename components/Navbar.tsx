@@ -29,6 +29,7 @@ export default function Navbar() {
             width={85}
             height={85}
             className="w-auto h-20"
+            style={{ paddingTop: '4px', paddingBottom: '4px' }}
           />
           <div className="flex flex-col justify-center" style={{ textAlign: 'justify', textAlignLast: 'justify' }}>
             <span className="text-navy font-bold text-2xl leading-tight block">
