@@ -34,7 +34,7 @@ export default function Navbar() {
             <span className="text-navy font-bold text-2xl leading-tight block">
               Pablo Barello & Asoc.
             </span>
-            <span className="text-navy font-normal text-base leading-tight block" style={{ letterSpacing: '0.1em' }}>
+            <span className="text-navy font-normal text-lg leading-tight block" style={{ letterSpacing: '0.2em' }}>
               Servicio Topográficos
             </span>
           </div>
