@@ -2,28 +2,34 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #080808;
+  --foreground: #2C3E50;
 
-  /* Paleta de colores del sitio de topografía */
-  --primary: #166aea;
-  --primary-light: #116dff;
-  --secondary: #3899ec;
-  --accent: #7fccf7;
-  --dark: #20303c;
-  --gray: #5f6360;
-  --success: #68B04D;
+  /* Paleta de colores del sitio original */
+  --yellow: #FFD700;
+  --yellow-light: #FFED4E;
+  --navy: #2C3E50;
+  --navy-dark: #1a252f;
+  --cyan: #3498DB;
+  --sky-blue: #87CEEB;
+  --sky-light: #B0E0E6;
+  --white: #FFFFFF;
+  --gray-light: #ECF0F1;
+  --text-dark: #2C3E50;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --color-primary: var(--primary);
-  --color-primary-light: var(--primary-light);
-  --color-secondary: var(--secondary);
-  --color-accent: var(--accent);
-  --color-dark: var(--dark);
-  --color-gray: var(--gray);
-  --color-success: var(--success);
+  --color-yellow: var(--yellow);
+  --color-yellow-light: var(--yellow-light);
+  --color-navy: var(--navy);
+  --color-navy-dark: var(--navy-dark);
+  --color-cyan: var(--cyan);
+  --color-sky-blue: var(--sky-blue);
+  --color-sky-light: var(--sky-light);
+  --color-white: var(--white);
+  --color-gray-light: var(--gray-light);
+  --color-text-dark: var(--text-dark);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
