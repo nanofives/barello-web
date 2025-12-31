@@ -182,7 +182,7 @@ export default function Contact() {
                   onChange={handleChange}
                   required
                   rows={6}
-                  className="w-full px-4 py-3 border border-gray-light rounded focus:border-cyan focus:outline-none resize-none bg-white"
+                  className="w-full px-4 py-3 border border-gray-light rounded focus:border-cyan focus:outline-none resize-none bg-gray-light"
                   placeholder="Contanos sobre tu proyecto..."
                 />
               </div>
