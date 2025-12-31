@@ -117,7 +117,9 @@ export default function Navbar() {
                   animate={{ opacity: 1, x: 0 }}
                   exit={{ opacity: 0, x: -20 }}
                   transition={{ delay: index * 0.05 }}
-                  onClick={() => setMobileMenuOpen(false)}
+                  onClick={(e) => {
+                    setMobileMenuOpen(false);
+                  }}
                   className="text-white font-medium text-base px-8 py-4 hover:bg-yellow hover:text-navy transition-colors duration-200 border-b border-white/10"
                 >
                   {item.name}
