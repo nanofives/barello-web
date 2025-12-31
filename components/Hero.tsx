@@ -8,17 +8,15 @@ export default function Hero() {
     <section
       id="inicio"
       className="relative min-h-screen flex items-start justify-end overflow-hidden"
+      style={{
+        backgroundImage: 'url(/bd67c5_34489d298f2042fd86b0eaa20571ff32~mv2.jpg)',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundAttachment: 'fixed',
+      }}
     >
-      {/* Background Image - Fixed */}
-      <div
-        className="absolute inset-0 bg-cover bg-center bg-fixed"
-        style={{
-          backgroundImage: 'url(/c19c76_427a7bbf62474f74968cb087499c7a3e.jpg)',
-        }}
-      >
-        {/* Overlay for better text readability */}
-        <div className="absolute inset-0 bg-navy/20" />
-      </div>
+      {/* Overlay for better text readability */}
+      <div className="absolute inset-0 bg-navy/20" />
 
       {/* Content */}
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full pt-32 pb-20">

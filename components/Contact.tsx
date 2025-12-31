@@ -189,7 +189,7 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="px-6 py-2 bg-cyan text-white rounded font-medium hover:bg-cyan/90 transition-colors duration-200"
+                className="w-full px-6 py-3 bg-cyan text-white rounded font-bold hover:bg-cyan/90 transition-colors duration-200"
               >
                 Enviar
               </button>
