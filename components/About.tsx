@@ -20,7 +20,7 @@ export default function About() {
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
             transition={{ duration: 0.8 }}
           >
-            <h2 className="text-5xl font-bold text-gray-light mb-4 tracking-wide">
+            <h2 className="text-5xl font-bold text-gray-med mb-4 tracking-wide">
               NOSOTROS
             </h2>
             <motion.div
