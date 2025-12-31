@@ -23,36 +23,194 @@ export default function Footer() {
       ),
     },
     {
-      name: 'Twitter',
+      name: 'LinkedIn',
       url: '#',
       icon: (
         <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-          <path d="M23.953 4.57a10 10 0 01-2.825.775 4.958 4.958 0 002.163-2.723c-.951.555-2.005.959-3.127 1.184a4.92 4.92 0 00-8.384 4.482C7.69 8.095 4.067 6.13 1.64 3.162a4.822 4.822 0 00-.666 2.475c0 1.71.87 3.213 2.188 4.096a4.904 4.904 0 01-2.228-.616v.06a4.923 4.923 0 003.946 4.827 4.996 4.996 0 01-2.212.085 4.936 4.936 0 004.604 3.417 9.867 9.867 0 01-6.102 2.105c-.39 0-.779-.023-1.17-.067a13.995 13.995 0 007.557 2.209c9.053 0 13.998-7.496 13.998-13.985 0-.21 0-.42-.015-.63A9.935 9.935 0 0024 4.59z" />
+          <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
         </svg>
       ),
     },
   ];
 
   return (
-    <footer className="bg-navy py-8">
+    <section id="contacto" className="py-20 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-center gap-6">
-          {socialLinks.map((social) => (
-            <motion.a
-              key={social.name}
-              href={social.url}
-              target="_blank"
-              rel="noopener noreferrer"
-              whileHover={{ scale: 1.2, y: -3 }}
-              whileTap={{ scale: 0.95 }}
-              className="text-white/70 hover:text-yellow transition-colors duration-200"
-              aria-label={social.name}
+        <motion.div
+          ref={ref}
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-8"
+        >
+          <h2 className="text-5xl font-bold text-navy mb-4 tracking-wide">
+            CONTACTO
+          </h2>
+          <motion.div
+            initial={{ width: 0 }}
+            animate={isInView ? { width: '100px' } : { width: 0 }}
+            transition={{ duration: 0.8, delay: 0.3 }}
+            style={{ backgroundColor: '#FFE045' }}
+            className="h-2 mx-auto mb-6"
+          />
+        </motion.div>
+
+        {/* Google Maps */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.8, delay: 0.4 }}
+          className="w-full h-64 rounded shadow-md overflow-hidden mb-16"
+        >
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.7!2d-57.959!3d-34.9214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2e62b4e8b5f2d%3A0x1234567890!2sCalle%2050%201335%2C%20La%20Plata%2C%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1234567890"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Pablo Barello & Asociados - Oficina Principal"
+          />
+        </motion.div>
+
+        {/* Grid principal */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
+          {/* Columna izquierda */}
+          <div className="space-y-8">
+            {/* Preguntas */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+              transition={{ duration: 0.8 }}
+              className="bg-gray-light p-8 rounded"
             >
-              {social.icon}
-            </motion.a>
-          ))}
+              <h3 className="text-2xl font-bold text-navy mb-4">Preguntas</h3>
+              <p className="text-navy/80 leading-relaxed text-justify">
+                Para todo tipo de preguntas, comentarios e inquietudes; por favor llámanos:{' '}
+                <a href="tel:+541151617694" className="text-cyan font-semibold hover:underline">
+                  011 5161-7694
+                </a>
+                {' '}o completa el formulario a continuación.
+              </p>
+            </motion.div>
+
+            {/* Oficina Principal */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="bg-gray-light p-8 rounded"
+            >
+              <h3 className="text-2xl font-bold text-navy mb-4">Oficina Principal</h3>
+              <div className="space-y-3 text-navy/80">
+                <p className="flex items-start gap-2">
+                  <span className="text-xl">📍</span>
+                  <span>
+                    50 N°1335 - Piso 1 A<br />
+                    Entre 21 y 22<br />
+                    La Plata, Buenos Aires, Argentina
+                  </span>
+                </p>
+                <p className="flex items-start gap-2">
+                  <span className="text-xl">📧</span>
+                  <span>info@pablobarello.com.ar</span>
+                </p>
+                <p className="flex items-start gap-2">
+                  <span className="text-xl">📱</span>
+                  <span>+54 011 5161-7694</span>
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Empleos */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="bg-gray-light p-8 rounded"
+            >
+              <h3 className="text-2xl font-bold text-navy mb-4">Empleos</h3>
+              <p className="text-navy/80 leading-relaxed text-justify">
+                Para aplicar a un trabajo en PB&Asociados, envía tu CV y carta de recomendación a:{' '}
+                <a
+                  href="mailto:info@pablobarello.com.ar"
+                  className="text-cyan font-semibold hover:underline"
+                >
+                  info@pablobarello.com.ar
+                </a>
+              </p>
+            </motion.div>
+          </div>
+
+          {/* Columna derecha - Presupuesto */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+            transition={{ duration: 0.8 }}
+            className="bg-gray-light p-8 rounded"
+          >
+            <h3 className="text-2xl font-bold text-navy mb-6">
+              Recibe un presupuesto
+            </h3>
+            <form onSubmit={handleSubmit} className="space-y-4">
+              <div>
+                <input
+                  type="text"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-light rounded focus:border-cyan focus:outline-none bg-white"
+                  placeholder="Nombre"
+                />
+              </div>
+
+              <div>
+                <input
+                  type="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 py-3 border border-gray-light rounded focus:border-cyan focus:outline-none bg-white"
+                  placeholder="Email"
+                />
+              </div>
+
+              <div>
+                <input
+                  type="tel"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 border border-gray-light rounded focus:border-cyan focus:outline-none bg-white"
+                  placeholder="Teléfono"
+                />
+              </div>
+
+              <div>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  rows={6}
+                  className="w-full px-4 py-3 border border-gray-light rounded focus:border-cyan focus:outline-none resize-none bg-white"
+                  placeholder="Contanos sobre tu proyecto..."
+                />
+              </div>
+
+              <button
+                type="submit"
+                className="w-full px-8 py-4 bg-cyan text-white rounded font-bold hover:bg-cyan/90 transition-colors duration-200"
+              >
+                Enviar
+              </button>
+            </form>
+          </motion.div>
         </div>
       </div>
-    </footer>
+    </section>
   );
 }

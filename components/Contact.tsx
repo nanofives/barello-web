@@ -58,14 +58,14 @@ export default function Contact() {
           className="w-full h-64 rounded shadow-md overflow-hidden mb-16"
         >
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.847251757892!2d-57.9572!3d-34.9214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2e62b0c8b5f2d%3A0x1234567890!2sCalle%2050%201335%2C%20La%20Plata%2C%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1234567890"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.7!2d-57.959!3d-34.9214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2e62b4e8b5f2d%3A0x1234567890!2sCalle%2050%201335%2C%20La%20Plata%2C%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1234567890"
             width="100%"
             height="100%"
             style={{ border: 0 }}
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="50 N°1335 La Plata, Buenos Aires"
+            title="Pablo Barello & Asociados - Oficina Principal"
           />
         </motion.div>
 
@@ -80,14 +80,14 @@ export default function Contact() {
               transition={{ duration: 0.8 }}
               className="bg-gray-light p-8 rounded"
             >
-              <h3 className="text-2xl font-bold text-navy mb-2">Preguntas</h3>
-              <p className="text-navy/70 mb-4">¿Tenés alguna consulta? Estamos para ayudarte</p>
-              <a
-                href="mailto:info@topografia.com"
-                className="text-cyan font-semibold hover:underline"
-              >
-                info@topografia.com
-              </a>
+              <h3 className="text-2xl font-bold text-navy mb-4">Preguntas</h3>
+              <p className="text-navy/80 leading-relaxed text-justify">
+                Para todo tipo de preguntas, comentarios e inquietudes; por favor llámanos:{' '}
+                <a href="tel:+541151617694" className="text-cyan font-semibold hover:underline">
+                  011 5161-7694
+                </a>
+                {' '}o completa el formulario a continuación.
+              </p>
             </motion.div>
 
             {/* Oficina Principal */}
@@ -101,15 +101,19 @@ export default function Contact() {
               <div className="space-y-3 text-navy/80">
                 <p className="flex items-start gap-2">
                   <span className="text-xl">📍</span>
-                  <span>50 N°1335, La Plata, Buenos Aires, Argentina</span>
+                  <span>
+                    50 N°1335 - Piso 1 A<br />
+                    Entre 21 y 22<br />
+                    La Plata, Buenos Aires, Argentina
+                  </span>
                 </p>
                 <p className="flex items-start gap-2">
                   <span className="text-xl">📧</span>
-                  <span>info@topografia.com</span>
+                  <span>info@pablobarello.com.ar</span>
                 </p>
                 <p className="flex items-start gap-2">
                   <span className="text-xl">📱</span>
-                  <span>+54 11 1234-5678</span>
+                  <span>+54 011 5161-7694</span>
                 </p>
               </div>
             </motion.div>
@@ -122,15 +126,15 @@ export default function Contact() {
               className="bg-gray-light p-8 rounded"
             >
               <h3 className="text-2xl font-bold text-navy mb-4">Empleos</h3>
-              <p className="text-navy/70 mb-4">
-                Sumate a nuestro equipo de profesionales
+              <p className="text-navy/80 leading-relaxed text-justify mb-4">
+                Para aplicar a un trabajo en PB&Asociados, envía tu CV y carta de recomendación a:{' '}
+                <a
+                  href="mailto:info@pablobarello.com.ar"
+                  className="text-cyan font-semibold hover:underline"
+                >
+                  info@pablobarello.com.ar
+                </a>
               </p>
-              <a
-                href="mailto:rrhh@topografia.com"
-                className="inline-block px-6 py-3 bg-cyan text-white rounded font-medium hover:bg-cyan/90 transition-colors"
-              >
-                Enviar CV
-              </a>
             </motion.div>
           </div>
 
