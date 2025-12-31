@@ -42,7 +42,7 @@ export default function Navbar() {
       </motion.div>
 
       {/* Navigation Menu - Navy Background */}
-      <div className="bg-navy flex-1 flex items-end justify-end px-8 pb-2">
+      <div className="bg-navy flex-1 flex items-end justify-end px-8 pb-1">
         <div className="hidden md:flex space-x-8">
           {navItems.map((item, index) => (
             <motion.a
@@ -52,7 +52,7 @@ export default function Navbar() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: index * 0.1 + 0.3 }}
               whileHover={{ y: -2 }}
-              className="text-white font-medium text-sm tracking-wide hover:text-yellow transition-colors duration-200 py-6"
+              className="text-white font-medium text-sm tracking-wide hover:text-yellow transition-colors duration-200"
             >
               {item.name}
             </motion.a>
