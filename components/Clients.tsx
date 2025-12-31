@@ -63,13 +63,13 @@ function ClientCard({
       onHoverEnd={() => setIsHovered(false)}
       className="group"
     >
-      <div className="h-20 flex items-center justify-center relative">
+      <div className="flex items-center justify-center">
         <Image
           src={isHovered ? client.logoHover : client.logo}
           alt={client.name}
-          width={120}
-          height={80}
-          className="object-contain"
+          width={150}
+          height={60}
+          className="object-contain h-16 w-auto"
         />
       </div>
     </motion.a>
