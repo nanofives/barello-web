@@ -39,7 +39,7 @@ const services = [
   {
     title: 'Mediciones de Tanques',
     description:
-      'Medición volumétrica de tanques de almacenamiento, calibración y certificación para industrias petroleras y químicas.',
+      'Medición de Ovalidad, Verticalidad y Calibración de tanques de almacenamiento. Certificación volumétrica para industrias petroleras y químicas.',
     image: '/servicio-6.jpg',
   },
 ];
