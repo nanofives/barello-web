@@ -31,7 +31,7 @@ export default function Navbar() {
             className="w-auto h-20"
           />
           <div className="flex flex-col justify-center" style={{ textAlign: 'justify', textAlignLast: 'justify' }}>
-            <span className="text-navy font-bold text-lg leading-tight block">
+            <span className="text-navy font-bold text-2xl leading-tight block">
               Pablo Barello & Asoc.
             </span>
             <span className="text-navy font-normal text-base leading-tight block" style={{ letterSpacing: '0.1em' }}>
