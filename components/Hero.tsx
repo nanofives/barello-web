@@ -9,7 +9,7 @@ export default function Hero() {
       id="inicio"
       className="relative min-h-screen flex items-start justify-end overflow-hidden"
       style={{
-        backgroundImage: 'url(/c19c76_a0c8f339cfb94906aa7f587a62c38f15.jpg)',
+        backgroundImage: 'url(/hero.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         backgroundAttachment: 'fixed',
