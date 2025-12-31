@@ -7,22 +7,40 @@ import Image from 'next/image';
 
 const services = [
   {
-    title: 'Relevamientos',
+    title: 'Relevamientos Planialtimétricos',
     description:
-      'Realizamos relevamientos topográficos precisos utilizando tecnología de última generación.',
-    image: '/IMG_20210106_143645_edited.jpg',
+      'Levantamientos topográficos completos con medición de coordenadas planimétricas y altimétricas para proyectos de ingeniería y construcción.',
+    image: '/servicio-1.jpg',
   },
   {
-    title: 'Replanteos',
+    title: 'Replanteos de Obra',
     description:
-      'Servicios de replanteo topográfico para proyectos de construcción e infraestructura.',
-    image: '/IMG_20210107_122514_edited.jpg',
+      'Transferencia precisa de proyectos del plano al terreno, marcación de ejes y cotas para inicio y control de obras.',
+    image: '/servicio-2.jpg',
   },
   {
     title: 'Tareas de Agrimensura',
     description:
-      'Servicios profesionales de agrimensura legal para mensuras, subdivisiones, unificaciones y asesoramiento técnico-legal.',
-    image: '/c19c76_5a9e692f14ed419db399cdf44bd02177.jpg',
+      'Mensuras, subdivisiones, unificaciones y deslindes. Gestión catastral y asesoramiento legal para trámites registrales en la Provincia de Buenos Aires.',
+    image: '/servicio-3.jpg',
+  },
+  {
+    title: 'Relevamientos con Georradar',
+    description:
+      'Detección no invasiva de estructuras subterráneas, tuberías, cables y anomalías mediante tecnología de georradar.',
+    image: '/servicio-4.jpg',
+  },
+  {
+    title: 'Vuelos Fotogramétricos',
+    description:
+      'Captura aérea con drones para generación de ortomosaicos, modelos 3D y análisis topográfico de grandes extensiones.',
+    image: '/servicio-5.jpg',
+  },
+  {
+    title: 'Mediciones de Tanques',
+    description:
+      'Medición volumétrica de tanques de almacenamiento, calibración y certificación para industrias petroleras y químicas.',
+    image: '/servicio-6.jpg',
   },
 ];
 
@@ -35,7 +53,7 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
       ref={ref}
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
-      transition={{ duration: 0.5, delay: index * 0.2 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
       className="bg-white p-0 rounded shadow-md overflow-hidden"
     >
       <div className="relative h-56 w-full">
@@ -71,7 +89,7 @@ export default function Services() {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl font-bold mb-4 tracking-wide" style={{ color: "#ADADAD" }}>
+          <h2 className="text-5xl font-bold mb-4 tracking-wide" style={{ color: '#ADADAD' }}>
             SERVICIOS
           </h2>
           <motion.div
@@ -83,7 +101,7 @@ export default function Services() {
           />
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {services.map((service, index) => (
             <ServiceCard key={service.title} service={service} index={index} />
           ))}
