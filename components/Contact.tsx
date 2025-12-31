@@ -78,7 +78,7 @@ export default function Contact() {
               initial={{ opacity: 0, x: -50 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
               transition={{ duration: 0.8 }}
-              className="bg-gray-light p-8 rounded"
+              className="p-8"
             >
               <h3 className="text-2xl font-bold text-navy mb-4">Preguntas</h3>
               <p className="text-navy/80 leading-relaxed text-justify">
@@ -95,7 +95,7 @@ export default function Contact() {
               initial={{ opacity: 0, x: -50 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
               transition={{ duration: 0.8, delay: 0.2 }}
-              className="bg-gray-light p-8 rounded"
+              className="p-8"
             >
               <h3 className="text-2xl font-bold text-navy mb-4">Oficina Principal</h3>
               <div className="space-y-3 text-navy/80">
@@ -114,7 +114,7 @@ export default function Contact() {
               initial={{ opacity: 0, x: -50 }}
               animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
               transition={{ duration: 0.8, delay: 0.4 }}
-              className="bg-gray-light p-8 rounded"
+              className="p-8"
             >
               <h3 className="text-2xl font-bold text-navy mb-4">Empleos</h3>
               <p className="text-navy/80 leading-relaxed text-justify mb-4">
