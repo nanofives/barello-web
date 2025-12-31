@@ -23,8 +23,7 @@ export default function Navbar() {
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.6 }}
-          className="bg-yellow flex items-center"
-          style={{ paddingLeft: '25px', paddingRight: '25px', paddingTop: '4px', paddingBottom: '4px' }}
+          className="bg-yellow flex items-center px-3 md:px-[25px] py-1"
         >
           <a href="#inicio" className="flex items-center gap-2">
             <Image
@@ -35,11 +34,11 @@ export default function Navbar() {
               className="w-auto h-16 md:h-20"
               style={{ paddingTop: '4px', paddingBottom: '4px' }}
             />
-            <div className="flex flex-col justify-center whitespace-nowrap">
-              <span className="text-navy font-bold text-xs md:text-2xl leading-tight block">
+            <div className="flex flex-col justify-center" style={{ textAlign: 'justify', textAlignLast: 'justify' }}>
+              <span className="text-navy font-bold text-base md:text-2xl leading-tight block">
                 Pablo Barello & Asoc.
               </span>
-              <span className="text-navy font-normal text-[10px] md:text-lg leading-tight block" style={{ letterSpacing: '0.1em' }}>
+              <span className="text-navy font-normal text-sm md:text-lg leading-tight block" style={{ letterSpacing: '0.2em' }}>
                 Servicio Topográficos
               </span>
             </div>
