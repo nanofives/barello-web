@@ -134,7 +134,7 @@ export default function Contact() {
             initial={{ opacity: 0, x: 50 }}
             animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
             transition={{ duration: 0.8 }}
-            className="bg-gray-light p-8 rounded"
+            className="p-8"
           >
             <h3 className="text-2xl font-bold text-navy mb-6">
               Recibe un presupuesto
@@ -147,7 +147,7 @@ export default function Contact() {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-light rounded focus:border-cyan focus:outline-none bg-white"
+                  className="w-full px-4 py-3 border border-gray-light rounded focus:border-cyan focus:outline-none bg-gray-light"
                   placeholder="Nombre"
                 />
               </div>
@@ -159,7 +159,7 @@ export default function Contact() {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 border border-gray-light rounded focus:border-cyan focus:outline-none bg-white"
+                  className="w-full px-4 py-3 border border-gray-light rounded focus:border-cyan focus:outline-none bg-gray-light"
                   placeholder="Email"
                 />
               </div>
@@ -170,7 +170,7 @@ export default function Contact() {
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="w-full px-4 py-3 border border-gray-light rounded focus:border-cyan focus:outline-none bg-white"
+                  className="w-full px-4 py-3 border border-gray-light rounded focus:border-cyan focus:outline-none bg-gray-light"
                   placeholder="Teléfono"
                 />
               </div>
