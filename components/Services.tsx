@@ -54,9 +54,9 @@ function ServiceCard({ service, index }: { service: typeof services[0]; index: n
       initial={{ opacity: 0, y: 50 }}
       animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
-      className="bg-white p-0 rounded shadow-md overflow-hidden"
+      className="bg-gray-light p-0 overflow-hidden"
     >
-      <div className="relative h-56 w-full">
+      <div className="relative h-56 w-full overflow-hidden">
         <Image
           src={service.image}
           alt={service.title}
@@ -79,7 +79,7 @@ export default function Services() {
   return (
     <section
       id="servicios"
-      className="py-20 bg-gray-light"
+      className="py-20 bg-white"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <motion.div
