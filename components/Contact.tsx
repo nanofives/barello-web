@@ -58,14 +58,14 @@ export default function Contact() {
           className="w-full h-64 rounded shadow-md overflow-hidden mb-16"
         >
           <iframe
-            src="https://www.google.com/maps/embed/v1/place?key=AIzaSyBFw0Qcqyl63eEqcqyL9Kqq5qy5qy5qy5q&q=Pablo+Barello+%26+Asociados,50+1335+La+Plata+Buenos+Aires+Argentina&zoom=16"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3271.7!2d-57.959!3d-34.9214!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95a2e62b4e8b5f2d%3A0x1234567890!2sCalle%2050%201335%2C%20La%20Plata%2C%20Buenos%20Aires!5e0!3m2!1ses!2sar!4v1234567890"
             width="100%"
             height="100%"
             style={{ border: 0 }}
             allowFullScreen
             loading="lazy"
             referrerPolicy="no-referrer-when-downgrade"
-            title="Pablo Barello & Asociados - Oficina Principal"
+            title="50 N°1335 La Plata, Buenos Aires"
           />
         </motion.div>
 
