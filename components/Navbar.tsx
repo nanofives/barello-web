@@ -36,10 +36,10 @@ export default function Navbar() {
               style={{ paddingTop: '4px', paddingBottom: '4px' }}
             />
             <div className="flex flex-col justify-center" style={{ textAlign: 'justify', textAlignLast: 'justify' }}>
-              <span className="text-navy font-bold text-lg md:text-2xl leading-tight block">
+              <span className="text-navy font-bold text-sm md:text-2xl leading-tight block">
                 Pablo Barello & Asoc.
               </span>
-              <span className="text-navy font-normal text-sm md:text-lg leading-tight block" style={{ letterSpacing: '0.2em' }}>
+              <span className="text-navy font-normal text-xs md:text-lg leading-tight block" style={{ letterSpacing: '0.15em' }}>
                 Servicio Topográficos
               </span>
             </div>
