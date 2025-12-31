@@ -99,22 +99,13 @@ export default function Contact() {
             >
               <h3 className="text-2xl font-bold text-navy mb-4">Oficina Principal</h3>
               <div className="space-y-3 text-navy/80">
-                <p className="flex items-start gap-2">
-                  <span className="text-xl">📍</span>
-                  <span>
-                    50 N°1335 - Piso 1 A<br />
-                    Entre 21 y 22<br />
-                    La Plata, Buenos Aires, Argentina
-                  </span>
+                <p>
+                  50 N°1335 - Piso 1 A<br />
+                  Entre 21 y 22<br />
+                  La Plata, Buenos Aires, Argentina
                 </p>
-                <p className="flex items-start gap-2">
-                  <span className="text-xl">📧</span>
-                  <span>info@pablobarello.com.ar</span>
-                </p>
-                <p className="flex items-start gap-2">
-                  <span className="text-xl">📱</span>
-                  <span>+54 011 5161-7694</span>
-                </p>
+                <p>info@pablobarello.com.ar</p>
+                <p>+54 011 5161-7694</p>
               </div>
             </motion.div>
 
