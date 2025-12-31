@@ -31,19 +31,30 @@ export default function About() {
               className="h-2 mb-8"
             />
 
-            <p className="text-base text-navy/80 leading-relaxed mb-6 text-justify">
-              Somos una empresa de topografía, dedicada a la geodesia, la
-              agrimensura legal y afines que opera desde hace 20 años en todo el
-              territorio nacional prestando servicios a las principales refinerías
-              de combustibles fósiles, industrias nacionales, internacionales, pyme
-              y a privados.
+            <p className="text-base text-navy/80 leading-relaxed mb-4 text-justify">
+              Con más de 20 años de trayectoria, somos una empresa líder en topografía,
+              geodesia y agrimensura legal en Argentina. Desde nuestros inicios, hemos
+              construido una sólida reputación trabajando con las principales refinerías
+              de combustibles fósiles, industrias nacionales e internacionales, PyMEs y
+              clientes particulares en todo el territorio nacional.
+            </p>
+
+            <p className="text-base text-navy/80 leading-relaxed mb-4 text-justify">
+              Nuestro equipo multidisciplinario está conformado por geógrafos, ingenieros,
+              agrimensores y técnicos especializados, todos profesionales con vasta
+              experiencia y en continua capacitación sobre las últimas tecnologías y
+              metodologías del sector. Trabajamos bajo estrictos sistemas de gestión de
+              calidad basados en las Normas ISO 9001.
             </p>
 
             <p className="text-base text-navy/80 leading-relaxed text-justify">
-              Nos destacamos por nuestra permanencia, competitividad,
-              responsabilidad en el cumplimiento de los tiempos preestablecidos y
-              por la capacidad de proporcionar soluciones eficientes y de calidad a
-              nuestros clientes.
+              A lo largo de nuestra trayectoria, hemos incorporado instrumental de última
+              generación - estaciones totales robotizadas, equipos GNSS de alta precisión,
+              drones para fotogrametría y tecnología georradar - lo que nos permite ofrecer
+              servicios eficientes, precisos y competitivos. Nos enorgullece nuestra
+              permanencia en el mercado, el cumplimiento riguroso de plazos y, sobre todo,
+              nuestra capacidad de brindar soluciones de calidad adaptadas a las
+              necesidades específicas de cada cliente.
             </p>
           </motion.div>
 
