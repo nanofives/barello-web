@@ -28,27 +28,6 @@ export default function Contact() {
     });
   };
 
-  const contactInfo = [
-    {
-      icon: '📧',
-      title: 'Email',
-      value: 'info@topografia.com',
-      link: 'mailto:info@topografia.com',
-    },
-    {
-      icon: '📱',
-      title: 'Teléfono',
-      value: '+54 11 1234-5678',
-      link: 'tel:+541112345678',
-    },
-    {
-      icon: '📍',
-      title: 'Ubicación',
-      value: 'Buenos Aires, Argentina',
-      link: '#',
-    },
-  ];
-
   return (
     <section id="contacto" className="py-20 bg-gray-light">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -66,134 +45,165 @@ export default function Contact() {
             initial={{ width: 0 }}
             animate={isInView ? { width: '100px' } : { width: 0 }}
             transition={{ duration: 0.8, delay: 0.3 }}
-            className="h-1 bg-cyan mx-auto"
+            style={{ backgroundColor: '#FFE045' }}
+            className="h-1 mx-auto"
           />
         </motion.div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-          {/* Contact Info */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-6"
-          >
-            {contactInfo.map((info, index) => (
-              <motion.a
-                key={info.title}
-                href={info.link}
-                initial={{ opacity: 0, x: -20 }}
-                animate={
-                  isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -20 }
-                }
-                transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
-                className="flex items-center space-x-4 p-4 bg-white rounded shadow-md"
+        {/* Grid principal */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
+          {/* Columna izquierda */}
+          <div className="space-y-8">
+            {/* Preguntas */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+              transition={{ duration: 0.8 }}
+              className="bg-white p-8 rounded shadow-md"
+            >
+              <h3 className="text-2xl font-bold text-navy mb-2">Preguntas</h3>
+              <p className="text-navy/70 mb-4">¿Tenés alguna consulta? Estamos para ayudarte</p>
+              <a
+                href="mailto:info@topografia.com"
+                className="text-cyan font-semibold hover:underline"
               >
-                <div className="text-4xl">{info.icon}</div>
+                info@topografia.com
+              </a>
+            </motion.div>
+
+            {/* Oficina Principal */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+              transition={{ duration: 0.8, delay: 0.2 }}
+              className="bg-white p-8 rounded shadow-md"
+            >
+              <h3 className="text-2xl font-bold text-navy mb-4">Oficina Principal</h3>
+              <div className="space-y-3 text-navy/80">
+                <p className="flex items-start gap-2">
+                  <span className="text-xl">📍</span>
+                  <span>Buenos Aires, Argentina</span>
+                </p>
+                <p className="flex items-start gap-2">
+                  <span className="text-xl">📧</span>
+                  <span>info@topografia.com</span>
+                </p>
+                <p className="flex items-start gap-2">
+                  <span className="text-xl">📱</span>
+                  <span>+54 11 1234-5678</span>
+                </p>
+              </div>
+            </motion.div>
+
+            {/* Empleos */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: -50 }}
+              transition={{ duration: 0.8, delay: 0.4 }}
+              className="bg-white p-8 rounded shadow-md"
+            >
+              <h3 className="text-2xl font-bold text-navy mb-4">Empleos</h3>
+              <p className="text-navy/70 mb-4">
+                Sumate a nuestro equipo de profesionales
+              </p>
+              <a
+                href="mailto:rrhh@topografia.com"
+                className="inline-block px-6 py-3 bg-cyan text-white rounded font-medium hover:bg-cyan/90 transition-colors"
+              >
+                Enviar CV
+              </a>
+            </motion.div>
+          </div>
+
+          {/* Columna derecha */}
+          <div className="space-y-8">
+            {/* Recibe un presupuesto */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
+              transition={{ duration: 0.8 }}
+              className="bg-white p-8 rounded shadow-md"
+            >
+              <h3 className="text-2xl font-bold text-navy mb-4">
+                Recibe un presupuesto
+              </h3>
+              <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
-                  <div className="text-sm font-medium text-navy/70">
-                    {info.title}
-                  </div>
-                  <div className="text-lg font-semibold text-navy">
-                    {info.value}
-                  </div>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-light rounded focus:border-cyan focus:outline-none"
+                    placeholder="Nombre"
+                  />
                 </div>
-              </motion.a>
-            ))}
-          </motion.div>
 
-          {/* Contact Form */}
-          <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            animate={isInView ? { opacity: 1, x: 0 } : { opacity: 0, x: 50 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="bg-white p-8 rounded shadow-md"
-          >
-            <form onSubmit={handleSubmit} className="space-y-4">
-              <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium text-navy mb-2"
+                <div>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleChange}
+                    required
+                    className="w-full px-4 py-3 border border-gray-light rounded focus:border-cyan focus:outline-none"
+                    placeholder="Email"
+                  />
+                </div>
+
+                <div>
+                  <input
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    className="w-full px-4 py-3 border border-gray-light rounded focus:border-cyan focus:outline-none"
+                    placeholder="Teléfono"
+                  />
+                </div>
+
+                <div>
+                  <textarea
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    required
+                    rows={5}
+                    className="w-full px-4 py-3 border border-gray-light rounded focus:border-cyan focus:outline-none resize-none"
+                    placeholder="Contanos sobre tu proyecto..."
+                  />
+                </div>
+
+                <button
+                  type="submit"
+                  className="w-full px-8 py-4 bg-cyan text-white rounded font-bold hover:bg-cyan/90 transition-colors duration-200"
                 >
-                  Nombre Completo
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-2 border border-gray-light rounded focus:border-cyan focus:outline-none"
-                  placeholder="Juan Pérez"
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium text-navy mb-2"
-                >
-                  Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                  className="w-full px-4 py-2 border border-gray-light rounded focus:border-cyan focus:outline-none"
-                  placeholder="juan@ejemplo.com"
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="phone"
-                  className="block text-sm font-medium text-navy mb-2"
-                >
-                  Teléfono
-                </label>
-                <input
-                  type="tel"
-                  id="phone"
-                  name="phone"
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="w-full px-4 py-2 border border-gray-light rounded focus:border-cyan focus:outline-none"
-                  placeholder="+54 11 1234-5678"
-                />
-              </div>
-
-              <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium text-navy mb-2"
-                >
-                  Mensaje
-                </label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleChange}
-                  required
-                  rows={4}
-                  className="w-full px-4 py-2 border border-gray-light rounded focus:border-cyan focus:outline-none resize-none"
-                  placeholder="Describe tu proyecto o consulta..."
-                />
-              </div>
-
-              <button
-                type="submit"
-                className="w-full px-8 py-3 bg-cyan text-white rounded font-medium hover:bg-cyan/90 transition-colors duration-200"
-              >
-                Enviar Mensaje
-              </button>
-            </form>
-          </motion.div>
+                  Enviar
+                </button>
+              </form>
+            </motion.div>
+          </div>
         </div>
+
+        {/* Google Maps */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="w-full h-96 bg-white rounded shadow-md overflow-hidden"
+        >
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d105073.50806421991!2d-58.51597949453632!3d-34.61566864414824!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca3b4ef90cbd%3A0xa0b3812e88e88e10!2sBuenos%20Aires!5e0!3m2!1ses!2sar!4v1234567890123"
+            width="100%"
+            height="100%"
+            style={{ border: 0 }}
+            allowFullScreen
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            title="Ubicación Buenos Aires"
+          />
+        </motion.div>
       </div>
     </section>
   );

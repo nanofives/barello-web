@@ -1,7 +1,7 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import Logo from './Logo';
+import Image from 'next/image';
 
 export default function Navbar() {
   const navItems = [
@@ -22,13 +22,19 @@ export default function Navbar() {
         className="bg-yellow flex items-center px-8 py-4"
       >
         <a href="#inicio" className="flex items-center gap-3">
-          <Logo className="w-16 h-16" />
+          <Image
+            src="/logo.svg"
+            alt="PB&Asociados Logo"
+            width={60}
+            height={60}
+            className="w-auto h-14"
+          />
           <div className="flex flex-col">
             <span className="text-navy font-bold text-sm leading-tight">
-              PB&Asociados
+              Pablo Barello & Asoc.
             </span>
             <span className="text-navy font-semibold text-xs leading-tight">
-              Servicios Topográficos
+              Servicio Topográficos
             </span>
           </div>
         </a>
