@@ -17,13 +17,13 @@ export default function Navbar() {
 
   return (
     <>
-      <nav className="fixed top-0 left-0 right-0 z-50 flex">
+      <nav className="fixed top-0 left-0 right-0 z-50 flex overflow-visible w-screen">
         {/* Logo Section - Yellow Background */}
         <motion.div
           initial={{ x: -100, opacity: 0 }}
           animate={{ x: 0, opacity: 1 }}
           transition={{ duration: 0.6 }}
-          className="bg-yellow flex items-center px-3 md:px-[25px] py-1"
+          className="bg-yellow flex items-center px-3 md:px-[25px] py-3 md:py-1"
         >
           <a href="#inicio" className="flex items-center gap-1 md:gap-2">
             <Image
@@ -31,7 +31,7 @@ export default function Navbar() {
               alt="PB&Asociados Logo"
               width={85}
               height={85}
-              className="w-auto h-10 md:h-20"
+              className="w-auto h-8 md:h-20"
             />
             <div className="flex flex-col justify-center" style={{ textAlign: 'justify', textAlignLast: 'justify' }}>
               <span className="text-navy font-bold text-[11px] md:text-2xl leading-tight block">
@@ -45,7 +45,7 @@ export default function Navbar() {
         </motion.div>
 
         {/* Navigation Menu - Navy Background */}
-        <div className="bg-navy flex-1 flex items-end justify-end pr-4 pl-2 md:px-8 pb-1">
+        <div className="bg-navy flex-1 flex items-end justify-end pr-2 pl-2 md:pr-8 md:pl-4 pb-2">
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-8" style={{ paddingBottom: '15px' }}>
             {navItems.map((item, index) => (
@@ -67,11 +67,11 @@ export default function Navbar() {
           <motion.button
             whileTap={{ scale: 0.95 }}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-            className="md:hidden text-white p-2 mb-2 flex-shrink-0"
+            className="md:hidden text-white p-2 md:p-3 flex-shrink-0 rounded"
             aria-label="Toggle menu"
           >
             <svg
-              className="w-6 h-6"
+              className="w-8 h-8"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -104,7 +104,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="fixed top-[72px] left-0 right-0 bg-navy z-40 md:hidden overflow-hidden"
+            className="fixed top-[52px] left-0 right-0 bg-navy z-40 md:hidden overflow-hidden"
           >
             <div className="flex flex-col">
               {navItems.map((item, index) => (
@@ -118,13 +118,20 @@ export default function Navbar() {
                   onClick={(e) => {
                     e.preventDefault();
                     setMobileMenuOpen(false);
-                    const target = document.querySelector(item.href);
-                    if (target) {
-                      const offsetTop = (target as HTMLElement).offsetTop - 80;
-                      window.scrollTo({ top: offsetTop, behavior: 'smooth' });
-                    }
+                    setTimeout(() => {
+                      const target = document.querySelector(item.href);
+                      if (target) {
+                        const rect = target.getBoundingClientRect();
+                        const scrollTop = window.scrollY || document.documentElement.scrollTop;
+                        const elementTop = rect.top + scrollTop;
+                        window.scrollTo({
+                          top: elementTop - 60,
+                          behavior: 'smooth',
+                        });
+                      }
+                    }, 100);
                   }}
-                  className="text-white font-medium text-base px-8 py-4 hover:bg-yellow hover:text-navy transition-colors duration-200 border-b border-white/10"
+                  className="text-white font-medium text-lg px-6 py-5 hover:bg-yellow hover:text-navy transition-colors duration-200 border-b border-white/10 active:bg-yellow active:text-navy"
                 >
                   {item.name}
                 </motion.a>
