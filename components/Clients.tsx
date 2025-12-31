@@ -11,40 +11,40 @@ const clients = [
     url: 'https://www.pan-energy.com',
     logo: '/bd67c5_30c2ec9911164547811d2aa54074d8b6~mv2.png',
     logoHover: '/bd67c5_0e4decaa26384878ab34d9022f2df6f1~mv2.png',
-    width: 140,
-    height: 80,
+    width: 200,
+    height: 110,
   },
   {
     name: 'Shell',
     url: 'https://www.shell.com.ar',
     logo: '/bd67c5_cdc8914872b0469eaa9a78d98e1b53d4~mv2.png',
     logoHover: '/bd67c5_20534d9f7c6f4faabc0b558625b8f710~mv2.png',
-    width: 120,
-    height: 60,
+    width: 170,
+    height: 85,
   },
   {
     name: 'Vitco',
     url: 'https://vitco.com.ar',
     logo: '/bd67c5_af0af4d51baf434cbe1a4a8b0ee4cb45~mv2.png',
     logoHover: '/bd67c5_237f7c901c894ac2a34906b215d735aa~mv2.png',
-    width: 100,
-    height: 50,
+    width: 150,
+    height: 75,
   },
   {
     name: 'YPF',
     url: 'https://www.ypf.com',
     logo: '/bd67c5_aa06fa80a2a842a9b3328d020e2f94e2~mv2.png',
     logoHover: '/bd67c5_f910fd98cf434f0ea430839f31b7bc38~mv2.png',
-    width: 100,
-    height: 50,
+    width: 150,
+    height: 75,
   },
   {
     name: 'Contreras',
     url: 'https://www.contreras.com.ar',
     logo: '/bd67c5_5856f734aa7243d091c28591498433ca~mv2.png',
     logoHover: '/bd67c5_61f16043922949169a1a278d239144a9~mv2.png',
-    width: 130,
-    height: 70,
+    width: 180,
+    height: 95,
   },
 ];
 
@@ -115,7 +115,7 @@ export default function Clients() {
           />
         </motion.div>
 
-        <div className="flex flex-wrap items-center justify-center gap-12 max-w-5xl mx-auto">
+        <div className="flex flex-wrap items-center justify-center gap-16 w-full px-8">
           {clients.map((client, index) => (
             <ClientCard key={client.name + index} client={client} index={index} />
           ))}
