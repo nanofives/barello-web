@@ -19,9 +19,9 @@ export default function Navbar() {
         initial={{ x: -100, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
         transition={{ duration: 0.6 }}
-        className="bg-yellow flex items-center px-4 py-4"
+        className="bg-yellow flex items-center px-2 py-2"
       >
-        <a href="#inicio" className="flex items-center gap-4">
+        <a href="#inicio" className="flex items-center gap-2">
           <Image
             src="/logo.svg"
             alt="PB&Asociados Logo"
