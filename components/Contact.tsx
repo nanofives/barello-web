@@ -14,9 +14,28 @@ export default function Contact() {
     message: '',
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log('Form submitted:', formData);
+
+    // Enviar email mediante Web3Forms
+    const form = e.target as HTMLFormElement;
+    const formDataToSend = new FormData(form);
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        body: formDataToSend,
+      });
+
+      if (response.ok) {
+        alert('Mensaje enviado exitosamente!');
+        setFormData({ name: '', email: '', phone: '', message: '' });
+      } else {
+        alert('Error al enviar el mensaje. Por favor intenta de nuevo.');
+      }
+    } catch (error) {
+      alert('Error al enviar el mensaje. Por favor intenta de nuevo.');
+    }
   };
 
   const handleChange = (
@@ -140,6 +159,12 @@ export default function Contact() {
               Recibe un presupuesto
             </h3>
             <form onSubmit={handleSubmit} className="space-y-4">
+              {/* Web3Forms Access Key - Necesitas registrarte gratis en web3forms.com */}
+              <input type="hidden" name="access_key" value="TU_ACCESS_KEY_AQUI" />
+              <input type="hidden" name="redirect" value="https://nanofives.github.io/barello-web#contacto" />
+              <input type="hidden" name="subject" value="Nuevo presupuesto desde pablobarello.com.ar" />
+              <input type="hidden" name="from_name" value="Formulario Web Pablo Barello" />
+
               <div>
                 <input
                   type="text"
@@ -189,7 +214,7 @@ export default function Contact() {
 
               <button
                 type="submit"
-                className="w-full px-6 py-3 bg-cyan text-white rounded font-bold hover:bg-cyan/90 transition-colors duration-200"
+                className="px-8 py-2 bg-cyan text-white rounded font-bold hover:bg-cyan/90 transition-colors duration-200"
               >
                 Enviar
               </button>
