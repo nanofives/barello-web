@@ -44,7 +44,7 @@ export default function Navbar() {
 
       {/* Navigation Menu - Navy Background */}
       <div className="bg-navy flex-1 flex items-end justify-end px-8 pb-1">
-        <div className="hidden md:flex space-x-8">
+        <div className="hidden md:flex space-x-8" style={{ paddingBottom: '15px' }}>
           {navItems.map((item, index) => (
             <motion.a
               key={item.name}
