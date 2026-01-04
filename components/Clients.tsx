@@ -96,7 +96,7 @@ export default function Clients() {
           setIsInView(true);
         }
       },
-      { margin: '-100px' }
+      { rootMargin: '-100px' }
     );
 
     if (titleRef.current) {
@@ -198,15 +198,16 @@ export default function Clients() {
           ref={containerRef}
           className="relative w-full overflow-hidden py-8"
           onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => !isDragging && setIsPaused(false)}
-          onMouseDown={handleMouseDown}
-          onMouseMove={handleMouseMove}
-          onMouseUp={handleMouseUp}
           onMouseLeave={() => {
             if (isDragging) {
               handleMouseUp({ clientX: dragStart + 0 } as React.MouseEvent);
+            } else {
+              setIsPaused(false);
             }
           }}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
         >
           <div
             ref={carouselRef}
