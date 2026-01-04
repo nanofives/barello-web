@@ -2,8 +2,16 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 export default function Hero() {
+  const [isIOS, setIsIOS] = useState(false);
+
+  useEffect(() => {
+    const isAppleDevice = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    setIsIOS(isAppleDevice);
+  }, []);
+
   return (
     <section
       id="inicio"
@@ -12,7 +20,7 @@ export default function Hero() {
         backgroundImage: 'url(/hero.jpg)',
         backgroundSize: 'cover',
         backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
+        backgroundAttachment: isIOS ? 'scroll' : 'fixed',
       }}
     >
       {/* Overlay for better text readability */}
