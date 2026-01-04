@@ -15,7 +15,8 @@
 
 # next.js
 /.next/
-# /out/ - IMPORTANT: Keep /out/ committed for GitHub Pages deployment
+/out/
+# /docs/ - IMPORTANT: Keep /docs/ committed for GitHub Pages deployment
 
 # production
 /build
