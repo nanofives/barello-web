@@ -113,7 +113,7 @@ export default function About() {
                   className="object-cover"
                   style={{
                     objectPosition: member.objectPosition,
-                    filter: 'saturate(0.65)'
+                    filter: 'grayscale(1)'
                   }}
                 />
               </div>
