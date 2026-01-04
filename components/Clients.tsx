@@ -1,7 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
-import { useInView } from 'framer-motion';
 import { useRef, useState, useEffect } from 'react';
 import Image from 'next/image';
 
@@ -43,34 +41,27 @@ const clients = [
   },
 ];
 
-// Triplicar clientes para efecto infinito verdadero
 const tripleClients = [...clients, ...clients, ...clients];
+const ITEM_WIDTH_PERCENT = 100 / tripleClients.length;
 
 function ClientCard({
   client,
-  index,
 }: {
   client: typeof clients[0];
-  index: number;
 }) {
   const [isHovered, setIsHovered] = useState(false);
 
   return (
-    <motion.a
+    <a
       href={client.url}
       target="_blank"
       rel="noopener noreferrer"
-      onHoverStart={() => setIsHovered(true)}
-      onHoverEnd={() => setIsHovered(false)}
-      className="flex-shrink-0 flex items-center justify-center"
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
+      className="flex-shrink-0 flex items-center justify-center group cursor-pointer transition-all"
     >
       <div className="h-24 flex items-center justify-center px-4">
-        <motion.div
-          animate={{
-            filter: isHovered ? 'saturate(1)' : 'saturate(0)',
-          }}
-          transition={{ duration: 0.3 }}
-        >
+        <div className={`transition-all duration-300 ${isHovered ? 'saturate-100' : 'saturate-0'}`}>
           <Image
             src={client.logo}
             alt={client.name}
@@ -78,46 +69,98 @@ function ClientCard({
             height={client.height}
             className="object-contain h-auto w-auto"
           />
-        </motion.div>
+        </div>
       </div>
-    </motion.a>
+    </a>
   );
 }
 
 export default function Clients() {
-  const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: '-100px' });
+  const titleRef = useRef<HTMLDivElement>(null);
+  const underlineRef = useRef<HTMLDivElement>(null);
+  const carouselRef = useRef<HTMLDivElement>(null);
+  const containerRef = useRef<HTMLDivElement>(null);
+
   const [currentSlide, setCurrentSlide] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
+  const [isInView, setIsInView] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const [dragStart, setDragStart] = useState(0);
   const dragTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
+  // Intersection Observer for title animation
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setIsInView(true);
+        }
+      },
+      { margin: '-100px' }
+    );
+
+    if (titleRef.current) {
+      observer.observe(titleRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
+  // Auto-scroll carousel
   useEffect(() => {
     if (!isPaused) {
       const timer = setInterval(() => {
         setCurrentSlide((prev) => {
           const next = prev + 0.1;
-          // Si llegamos al final del segundo grupo, resetear al inicio del segundo grupo sin animación
           if (next >= clients.length * 2) {
             return clients.length + (next % clients.length);
           }
           return next;
         });
-      }, 50); // Actualizar cada 50ms con movimiento pequeño para efecto continuo lento
+      }, 50);
 
       return () => clearInterval(timer);
     }
   }, [isPaused]);
 
-  const handleDragEnd = (event: any, info: any) => {
-    // Pausar mientras se calcula el nuevo slide
-    setIsPaused(true);
+  // Apply transform to carousel
+  useEffect(() => {
+    if (carouselRef.current) {
+      const translateX = -(currentSlide * ITEM_WIDTH_PERCENT);
+      carouselRef.current.style.transform = `translateX(${translateX}%)`;
+    }
+  }, [currentSlide]);
 
-    // Calcular cuántos items se arrastró
-    const itemsToMove = Math.round(info.offset.x / 100);
-    const newSlide = (currentSlide - itemsToMove) % (clients.length * 3);
+  const handleMouseDown = (e: React.MouseEvent) => {
+    setIsDragging(true);
+    setDragStart(e.clientX);
+    setIsPaused(true);
+  };
+
+  const handleMouseMove = (e: React.MouseEvent) => {
+    if (!isDragging) return;
+
+    const diff = e.clientX - dragStart;
+    const movePercent = (diff / (carouselRef.current?.offsetWidth || 1)) * 100;
+    const itemDelta = movePercent / ITEM_WIDTH_PERCENT;
+
+    if (carouselRef.current) {
+      const newTranslate = -(currentSlide * ITEM_WIDTH_PERCENT) + movePercent;
+      carouselRef.current.style.transform = `translateX(${newTranslate}%)`;
+    }
+  };
+
+  const handleMouseUp = (e: React.MouseEvent) => {
+    if (!isDragging) return;
+    setIsDragging(false);
+
+    const diff = e.clientX - dragStart;
+    const movePercent = (diff / (carouselRef.current?.offsetWidth || 1)) * 100;
+    const itemDelta = Math.round(movePercent / ITEM_WIDTH_PERCENT);
+
+    const newSlide = (currentSlide - itemDelta) % (clients.length * 3);
     setCurrentSlide(newSlide < 0 ? newSlide + (clients.length * 3) : newSlide);
 
-    // Reanudar el desplazamiento automático después de 2 segundos
     if (dragTimeoutRef.current) {
       clearTimeout(dragTimeoutRef.current);
     }
@@ -132,50 +175,61 @@ export default function Clients() {
       className="py-10 bg-white"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <motion.div
-          ref={ref}
-          initial={{ opacity: 0, y: 30 }}
-          animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.6 }}
-          className="text-center mb-16"
+        <div
+          ref={titleRef}
+          className={`text-center mb-16 transition-all duration-600 ${
+            isInView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          }`}
         >
           <h2 className="text-5xl font-bold mb-4 tracking-wide" style={{ color: "#ADADAD" }}>
             CLIENTES
           </h2>
-          <motion.div
-            initial={{ width: 0 }}
-            animate={isInView ? { width: '100px' } : { width: 0 }}
-            transition={{ duration: 0.8, delay: 0.3 }}
+          <div
+            ref={underlineRef}
+            className={`h-2 mx-auto transition-all duration-700 ${
+              isInView ? 'w-24' : 'w-0'
+            }`}
             style={{ backgroundColor: '#FFE045' }}
-            className="h-2 mx-auto"
           />
-        </motion.div>
+        </div>
 
-        {/* Carrusel con scroll infinito */}
+        {/* Carousel */}
         <div
+          ref={containerRef}
           className="relative w-full overflow-hidden py-8"
           onMouseEnter={() => setIsPaused(true)}
-          onMouseLeave={() => setIsPaused(false)}
+          onMouseLeave={() => !isDragging && setIsPaused(false)}
+          onMouseDown={handleMouseDown}
+          onMouseMove={handleMouseMove}
+          onMouseUp={handleMouseUp}
+          onMouseLeave={() => {
+            if (isDragging) {
+              handleMouseUp({ clientX: dragStart + 0 } as React.MouseEvent);
+            }
+          }}
         >
-          <motion.div
-            className="flex gap-8 cursor-grab active:cursor-grabbing"
-            drag="x"
-            dragElastic={0.2}
-            dragConstraints={{ left: -1000, right: 1000 }}
-            onDragEnd={handleDragEnd}
-            onDragStart={() => setIsPaused(true)}
-            animate={{ x: `${-(currentSlide * (100 / tripleClients.length))}%` }}
-            transition={{
-              duration: 0.05,
-              ease: 'linear',
+          <div
+            ref={carouselRef}
+            className="flex gap-8 cursor-grab active:cursor-grabbing transition-transform"
+            style={{
+              transitionDuration: isDragging ? '0ms' : '50ms',
+              transitionTimingFunction: 'linear',
             }}
           >
             {tripleClients.map((client, index) => (
-              <ClientCard key={index} client={client} index={index} />
+              <ClientCard key={index} client={client} />
             ))}
-          </motion.div>
+          </div>
         </div>
       </div>
+
+      <style>{`
+        @supports not (transition-duration: 50ms) {
+          [ref="carouselRef"] {
+            transition: transform 50ms linear;
+          }
+        }
+      `}</style>
     </section>
   );
 }
