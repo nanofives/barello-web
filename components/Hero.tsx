@@ -2,17 +2,28 @@
 
 import { motion } from 'framer-motion';
 import Image from 'next/image';
+import { useEffect, useState } from 'react';
 
 export default function Hero() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    setIsMobile(window.innerWidth < 768);
+    const handleResize = () => setIsMobile(window.innerWidth < 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   return (
     <section
       id="inicio"
       className="relative min-h-screen flex items-start justify-end overflow-hidden"
       style={{
         backgroundImage: 'url(/hero.jpg)',
-        backgroundSize: 'cover',
+        backgroundSize: isMobile ? 'contain' : 'cover',
         backgroundPosition: 'center',
-        backgroundAttachment: 'fixed',
+        backgroundAttachment: isMobile ? 'scroll' : 'fixed',
+        backgroundColor: '#20303c',
       }}
     >
       {/* Overlay for better text readability */}

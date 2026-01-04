@@ -10,11 +10,11 @@ export default function About() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
 
   const teamMembers = [
-    { id: 1, name: 'Pablo', position: 'Director', image: '/84c2932d-5812-4733-bdb8-5171d6f807a8.png', objectPosition: '50% 70%', scaleDown: true },
-    { id: 2, name: 'Fernando', position: 'Gerente Técnico', image: '/14753ff8-7e9a-4887-87f3-2ee90eb532b1.png', objectPosition: '50% 58%' },
-    { id: 3, name: 'Marcelo', position: 'Jefe de Oficina Técnica', image: '/ad55171e-dd86-434c-8ab7-b0454288b420.png', objectPosition: '50% 60%' },
-    { id: 4, name: 'Enzo', position: 'Topografía de Obra', image: '/f482f042-b162-47c9-9546-fc666b46c798.png', objectPosition: '50% 55%' },
-    { id: 5, name: 'Federico', position: 'Topografía de Obra', image: '/e3520843-a053-44e1-99c4-73526b85c6c3.png', objectPosition: '50% 58%' },
+    { id: 1, name: 'Pablo', position: 'Director', image: '/pablo.png', objectPosition: '50% 35%', scaleDown: true },
+    { id: 2, name: 'Fernando', position: 'Gerente Técnico', image: '/14753ff8-7e9a-4887-87f3-2ee90eb532b1.png', objectPosition: '50% 40%' },
+    { id: 3, name: 'Marcelo', position: 'Jefe de Oficina Técnica', image: '/ad55171e-dd86-434c-8ab7-b0454288b420.png', objectPosition: '50% 28%' },
+    { id: 4, name: 'Enzo', position: 'Topografía de Obra', image: '/f482f042-b162-47c9-9546-fc666b46c798.png', objectPosition: '50% 25%' },
+    { id: 5, name: 'Federico', position: 'Topografía de Obra', image: '/e3520843-a053-44e1-99c4-73526b85c6c3.png', objectPosition: '50% 28%' },
   ];
 
   return (
@@ -102,7 +102,7 @@ export default function About() {
               <div
                 className="relative w-40 h-40 rounded-full overflow-hidden mb-4"
                 style={{
-                  border: '3px solid #FFE045',
+                  border: '5px solid #FFE045',
                   boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)',
                 }}
               >
@@ -114,7 +114,7 @@ export default function About() {
                   style={{
                     objectPosition: member.objectPosition,
                     filter: 'grayscale(1)',
-                    transform: member.scaleDown ? 'scale(0.75)' : 'scale(1)',
+                    transform: member.scaleDown ? 'scale(0.99)' : 'scale(1)',
                   }}
                 />
               </div>
