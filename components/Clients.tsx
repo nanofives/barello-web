@@ -91,7 +91,7 @@ export default function Clients() {
 
   return (
     <section
-      id="proyectos"
+      id="clientes"
       className="py-10 bg-white"
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
