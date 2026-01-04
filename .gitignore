@@ -15,7 +15,7 @@
 
 # next.js
 /.next/
-# /out/
+# /out/ - IMPORTANT: Keep /out/ committed for GitHub Pages deployment
 
 # production
 /build
@@ -39,3 +39,17 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Local development
+.env.local
+.env.*.local
