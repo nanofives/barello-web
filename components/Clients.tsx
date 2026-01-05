@@ -86,6 +86,7 @@ export default function Clients() {
   const [isInView, setIsInView] = useState(false);
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState(0);
+  const [isResetting, setIsResetting] = useState(false);
   const dragTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   // Intersection Observer for title animation
@@ -113,7 +114,14 @@ export default function Clients() {
         setCurrentSlide((prev) => {
           const next = prev + 0.1;
           if (next >= clients.length * 2) {
-            return clients.length + (next % clients.length);
+            // Reset sin transición
+            setIsResetting(true);
+            requestAnimationFrame(() => {
+              requestAnimationFrame(() => {
+                setIsResetting(false);
+              });
+            });
+            return clients.length;
           }
           return next;
         });
@@ -213,7 +221,7 @@ export default function Clients() {
             ref={carouselRef}
             className="flex gap-8 cursor-grab active:cursor-grabbing transition-transform"
             style={{
-              transitionDuration: isDragging ? '0ms' : '50ms',
+              transitionDuration: isDragging || isResetting ? '0ms' : '50ms',
               transitionTimingFunction: 'linear',
             }}
           >
