@@ -5,7 +5,7 @@ import "@fontsource/work-sans/500.css";
 import "@fontsource/work-sans/700.css";
 
 export const metadata: Metadata = {
-  title: "Servicios Topográficos - 20 Años de Experiencia",
+  title: "Pablo Barello y Asoc | Servicios Topográficos",
   description: "Empresa de topografía, geodesia y agrimensura legal con 20 años de experiencia en todo el territorio nacional. Soluciones profesionales para industrias, refinerías y privados.",
 };
 
