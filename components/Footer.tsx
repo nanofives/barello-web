@@ -71,6 +71,23 @@ export default function Footer() {
             </svg>
           </motion.a>
         </div>
+
+        <div className="flex items-center justify-center gap-4 mt-3 text-sm">
+          <a
+            href="https://marianoamendola.sgej.com.ar"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white/60 hover:text-yellow transition-colors duration-200"
+          >
+            Portfolio
+          </a>
+          <a
+            href="mailto:mariano.amendola.95@gmail.com"
+            className="text-white/60 hover:text-yellow transition-colors duration-200"
+          >
+            Email
+          </a>
+        </div>
       </div>
     </footer>
   );
